@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+    <link rel="stylesheet" href="WeatherStyle.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <img style="width: 100px; height: 100px; transform: translate(-5px);" src="logo.png"/>
+        </div>
+        <div class="nav-item" onclick="window.location.href='index.html'">Dashboard</div>
+        <div class="nav-item" onclick="window.location.href='Tables.html'">Tables</div>
+    </div>
+
+    <div class="main-content">
+        <div class="header">
+            <div class="search-bar">
+                <input type="text" placeholder="Search city..." id="citySearch">
+            </div>
+            <div class="user-profile">
+                <img class="pfp-user" src="pfp.png"/>
+            </div>
+        </div>
+
+        <div class="weather-widget" id="weatherWidget">
+            <h2>Weather Information</h2>
+            <div id="weatherData"></div>
+        </div>        
+
+        <div class="charts-container">
+            <div class="chart-box">
+                <canvas id="tempBarChart"></canvas>
+            </div>
+            <div class="chart-box">
+                <canvas id="weatherDoughnutChart"></canvas>
+            </div>
+            <div class="chart-box">
+                <canvas id="tempLineChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class="chatbot-container collapsed" id="chatbot">
+        <div class="chat-header" id="chatHeader" onclick="toggleChatbot()">
+            <div class="chat-header-text">
+                <div class="chat-header-icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                    </svg>
+                </div>
+                <span>AI Assistant</span>
+            </div>
+            <svg class="collapse-arrow" id="toggleArrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 15l-6-6-6 6"/>
+            </svg>
+        </div>
+        <div class="chat-content" id="chatContent">
+            <div class="chat-messages" id="chatMessages"></div>
+            <div class="chat-input">
+                <input type="text" placeholder="Type your message here..." id="chatInput">
+            </div>
+        </div>
+    </div>
+
+    <script src="WeatherScript.js"></script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather History</title>
+    <link rel="stylesheet" href="WeatherStyle.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <img style="width: 100px; height: 100px; transform: translate(-5px);" src="logo.png"/>
+        </div>
+        <div class="nav-item" onclick="window.location.href='index.html'">Dashboard</div>
+        <div class="nav-item" onclick="window.location.href='Tables.html'">Tables</div>
+    </div>
+
+    <div class="main-content">
+        <div class="header">
+            <div class="search-bar">
+                <input type="text" placeholder="Search city..." id="citySearch">
+            </div>
+            <div class="user-profile">
+                <img class="pfp-user" src="pfp.png"/>
+            </div>
+        </div>
+
+        <div class="weather-info-card">
+            <h2>Current Weather Stats</h2>
+            <div class="weather-stats" id="currentWeatherStats">
+                <!-- Will be populated by JavaScript -->
+            </div>
+        </div>
+
+        <div class="weather-table">
+            <h2>Weather History</h2>
+            <table id="weatherHistoryTable">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Temperature (°C)</th>
+                        <th>Weather</th>
+                        <th>Humidity (%)</th>
+                        <th>Wind Speed (m/s)</th>
+                        <th>Pressure (hPa)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Will be populated by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="chatbot-container collapsed" id="chatbot">
+        <div class="chat-header" id="chatHeader" onclick="toggleChatbot()">
+            <div class="chat-header-text">
+                <div class="chat-header-icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                    </svg>
+                </div>
+                <span>AI Assistant</span>
+            </div>
+            <svg class="collapse-arrow" id="toggleArrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 15l-6-6-6 6"/>
+            </svg>
+        </div>
+        <div class="chat-content" id="chatContent">
+            <div class="chat-messages" id="chatMessages"></div>
+            <div class="chat-input">
+                <input type="text" placeholder="Type your message here..." id="chatInput">
+            </div>
+        </div>
+    </div>
+
+    <script src="WeatherTable.js"></script>
+</body>
+</html>
